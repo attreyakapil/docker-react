@@ -6,5 +6,6 @@ services:
 before_install:
   - docker build -t attreyakapil/docker-react -f Dockerfile.dev .
 
-scripts:
+script:
   - docker run -e CI=true attreyakapil/docker-react npm run test
+

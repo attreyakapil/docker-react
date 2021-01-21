@@ -9,3 +9,14 @@ before_install:
 script:
   - docker run -e CI=true attreyakapil/docker-react npm run test
 
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-277616157653"
+  bucket_path: "docker-react"
+
+on:
+  brnach: main
+  
